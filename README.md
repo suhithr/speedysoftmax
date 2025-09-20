@@ -1,0 +1,1 @@
+Optimizing a Softmax for some CUDA practice
