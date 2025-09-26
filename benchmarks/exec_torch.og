@@ -6,3 +6,5 @@ INFO:__main__:Running Softmax on matrix of size (1024, 32768).
 INFO:__main__:Execution time: 1.4299 ms
 INFO:__main__:Running Softmax on matrix of size (1024, 32768).
 INFO:__main__:Execution time: 1.4330 ms
+INFO:__main__:Running Softmax on matrix of size (1024, 32768).
+INFO:__main__:Execution time: 1.4319 ms
