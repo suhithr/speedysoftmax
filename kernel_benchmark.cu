@@ -76,8 +76,8 @@ void benchmark_kernel_softmax(int M, int N, int kernel_num) {
     // verify correctness and avoid cold start
     if (kernel_num > 0)
     {
-        run_kernel_0(matd, resd, M, N, REPEAT_TIMES);
-        run_kernel_1(matd, resd_ref, M, N, REPEAT_TIMES);
+        run_kernel_0(matd, resd, M, N, 1);
+        run_kernel(kernel_num, matd, resd_ref, M, N, 1);
         CUDA_CHECK(cudaDeviceSynchronize());
         CUDA_CHECK(cudaMemcpy(result, resd, total_size, cudaMemcpyDeviceToHost));
         CUDA_CHECK(cudaMemcpy(result_ref, resd_ref, total_size, cudaMemcpyDeviceToHost));
