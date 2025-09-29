@@ -31,6 +31,9 @@ void run_kernel(int kernel_num, const float* __restrict__ matd, float* __restric
         case 2:
             run_kernel_2(matd, resd, M, N, repeat_times);
             break;
+        case 3:
+            run_kernel_3(matd, resd, M, N, repeat_times);
+            break;
         default:
             throw std::invalid_argument("Unknown kernel number");
     }
@@ -116,14 +119,14 @@ void benchmark_kernel_softmax(int M, int N, int kernel_num) {
 int main(int argc, char **argv) {
     if (argc < 2)
     {
-        std::cerr << "Select a kernel (range 0 - 2)" << std::endl;
+        std::cerr << "Select a kernel (range 0 - 3)" << std::endl;
         exit(EXIT_FAILURE);
     }
     // read kernel number
     int kernel_num = std::stoi(argv[1]);
-    if (kernel_num < 0 || kernel_num > 2)
+    if (kernel_num < 0 || kernel_num > 3)
     {
-        std::cerr << "Select a kernel (range 0 - 2)" << std::endl;
+        std::cerr << "Select a kernel (range 0 - 3)" << std::endl;
         exit(EXIT_FAILURE);
     }
 

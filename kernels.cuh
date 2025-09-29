@@ -4,5 +4,6 @@
 #include "kernels/0_naive.cuh"
 #include "kernels/1_online.cuh"
 #include "kernels/2_online_shared.cuh"
+#include "kernels/3_warp_reduction.cuh"
 
 #endif
